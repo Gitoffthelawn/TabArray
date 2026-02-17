@@ -35,8 +35,8 @@ export class ConsoleFormatter {
       const tokens = ConsoleFormatter.tokenize(firstArg);
       const results: unknown[] = [];
       let strBuffer = '';
-      let matches: string[] | null = null;
       for (const token of tokens) {
+        let matches: ?string[];
         if (token == '%%') {
           strBuffer += '%';
         } else if (token == '%o' || token == '%O') {
